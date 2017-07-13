@@ -8,12 +8,12 @@ function deepCopy(val) {
     // ...
 }*/
 function deepCopy(val) {
-    var copy;
+    var copy ={};
     for (var key in val)
     {
-        if (typeof(copy[key] = "object")
+        if (typeof(copy[key]) == "object")
             copy[key] = deepCopy(val[key]);
-        else
-            copy[key] = val[key];
+        copy[key] = val[key];
     }
     return copy;
+}
