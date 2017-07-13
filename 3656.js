@@ -13,7 +13,8 @@ function deepCopy(val) {
     {
         if (typeof(copy[key]) == "object")
             copy[key] = deepCopy(val[key]);
-        copy[key] = val[key];
+        else
+            copy[key] = val[key];
     }
     return copy;
 }
