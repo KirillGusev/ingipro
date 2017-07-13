@@ -7,3 +7,13 @@ var val = JSON.parse(str);
 function deepCopy(val) {
     // ...
 }*/
+function deepCopy(val) {
+    var copy;
+    for (var key in val)
+    {
+        if (typeof(copy[key]) == "object")
+            copy[key] = deepCopy(val[key]);
+        copy[key] = val[key];
+    }
+    return copy;
+}
